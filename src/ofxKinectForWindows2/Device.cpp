@@ -156,6 +156,12 @@ namespace ofxKinectForWindows2 {
 	}
 
 	//----------
+	bool Device::setDatabase(wstring _gbd) {
+		if (getBodySource() == NULL) { ofLog(OF_LOG_ERROR, "First need init a body source"); return false; }
+		return getBodySource()->setupVGBF(this->sensor, _gbd);
+	}
+
+	//----------
 	bool Device::releaseMultiSource() {
 		// look for sources initialized with MultiSource (those without their own reader)
 		// and erase them. They are consecutive in the vector

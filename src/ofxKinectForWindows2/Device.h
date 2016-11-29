@@ -39,6 +39,8 @@ namespace ofxKinectForWindows2 {
 		bool releaseBodyIndexSource();
 		bool releaseBodySource();
 
+		bool setDatabase(wstring _gbd);
+
 		void update();
 		bool isFrameNew() const;
 
