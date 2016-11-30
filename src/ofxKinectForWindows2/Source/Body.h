@@ -16,6 +16,7 @@ namespace ofxKinectForWindows2 {
 		struct gestureResult {
 			bool value;
 			float progress;
+			float confidence;
 			int id;
 		};
 
@@ -48,6 +49,7 @@ namespace ofxKinectForWindows2 {
 
 			const bool &getGestureResult(int n) { return gestureResults[n].value; }
 			const float &getGestureProgress(int n) { return gestureResults[n].progress; }
+			const float &getGestureConfidence(int n) { return gestureResults[n].confidence; }
 			const int &getGestureID(int n) { return getGestureResult(n) ? gestureResults[n].id : -1; }
 			int getGestureSize() { return pGesture.size(); }
 

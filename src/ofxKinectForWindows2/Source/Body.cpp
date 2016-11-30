@@ -234,7 +234,6 @@ namespace ofxKinectForWindows2 {
 													gestureResults[i].id = j;
 													UINT64 num;
 													pGestureFrame->get_TrackingId(&num);
-													//ofLog(OF_LOG_VERBOSE, "gesture:" + ofToString(j) + ", id:" + ofToString(num));
 												}
 											}
 											else if (gestureType == GestureType::GestureType_Discrete) {
@@ -243,6 +242,9 @@ namespace ofxKinectForWindows2 {
 													pGestureResult->get_Detected(&bDetected);
 													gestureResults[i].value = bDetected;
 													if (bDetected) {
+														float confidence;
+														pGestureResult->get_Confidence(&confidence);
+														gestureResults[i].confidence = confidence;
 														gestureResults[i].id = j;
 														UINT64 num;
 														pGestureFrame->get_TrackingId(&num);
